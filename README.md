@@ -1,7 +1,7 @@
 # ss-init
 
 ```shell
-wget --no-check-certificate https://github.com/sy264115809/ss-init/blob/master/install.sh -P ~
+wget --no-check-certificate https://raw.githubusercontent.com/sy264115809/ss-init/master/install.sh | sh
 ```
 
 **install serverSpeeder**
