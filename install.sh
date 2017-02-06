@@ -12,7 +12,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/sy264115809/ss-ini
 supervisorctl reload
 
 # config iptables
-wget --no-check-certificate https://raw.githubusercontent.com/sy264115809/ss-init/master/iptables.rules -O /etc/iptables.test.conf
+wget --no-check-certificate https://raw.githubusercontent.com/sy264115809/ss-init/master/iptables.rules -O /etc/iptables.test.rules
 iptables-restore < /etc/iptables.test.rules
 iptables -L
 iptables-save > /etc/iptables.up.rules
