@@ -17,3 +17,8 @@ iptables -L
 iptables-save > /etc/iptables.up.rules
 echo -e "#!/bin/sh\n/sbin/iptables-restore < /etc/iptables.up.rules" > /etc/network/if-pre-up.d/iptables
 chmod +x /etc/network/if-pre-up.d/iptables
+
+# install fail2ban
+apt-get install fail2ban  
+wget --no-check-certificate https://github.com/sy264115809/ss-init/blob/master/jail.local -P /etc/fail2ban
+service fail2ban restart 
