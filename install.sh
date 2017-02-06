@@ -8,10 +8,11 @@ pip install shadowsocks
 wget --no-check-certificate https://raw.githubusercontent.com/sy264115809/ss-init/master/shadowsocks.json -P /etc
 
 # clone the supervisor config
-wget --no-check-certificate https://raw.githubusercontent.com/sy264115809/ss-init/master/supervisor.conf -O shadowsocks.conf -P /etc/supervisor/conf.d
+wget --no-check-certificate https://raw.githubusercontent.com/sy264115809/ss-init/master/supervisor.conf -O /etc/supervisor/conf.d/shadowsocks.conf
+supervisorctl reload
 
 # config iptables
-wget --no-check-certificate https://raw.githubusercontent.com/sy264115809/ss-init/master/iptables.rules -O iptables.test.conf -P /etc
+wget --no-check-certificate https://raw.githubusercontent.com/sy264115809/ss-init/master/iptables.rules -O /etc/iptables.test.conf
 iptables-restore < /etc/iptables.test.rules
 iptables -L
 iptables-save > /etc/iptables.up.rules
