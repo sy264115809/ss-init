@@ -1,8 +1,12 @@
-# install softwares
-apt-get update && apt-get install -y vim python-pip supervisor
+set -ex
 
-# install shadowsocks
-pip install shadowsocks
+# install softwares
+apt-get update
+apt-get install -y vim supervisor
+
+# install ss
+https://github.com/shadowsocks/shadowsocks-rust/releases/download/v1.7.2/shadowsocks-v1.7.2-stable.x86_64-unknown-linux-musl.tar.xz
+tar -C /usr/local/bin -xf shadowsocks-v1.7.2-stable.x86_64-unknown-linux-musl.tar.xz
 
 # clone the shadowsocks configuration
 wget --no-check-certificate https://raw.githubusercontent.com/sy264115809/ss-init/master/shadowsocks.json -P /etc
